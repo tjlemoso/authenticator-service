@@ -45,11 +45,15 @@ public class AuthenticatorService {
     
             } 
 
-            return new AuthenticatorResponse();
+            AuthenticatorResponse response = new AuthenticatorResponse();
+            response.setUser(new UserDTOResponse());
+            return response ;
             
         } catch (Exception e) {
             LOGGER.info("Error {}", e.getMessage());
-            return new AuthenticatorResponse();
+            AuthenticatorResponse response = new AuthenticatorResponse();
+            response.setUser(new UserDTOResponse());
+            return response ;
         }        
 
     }
